@@ -1,0 +1,22 @@
+How to Generate SSH key:
+ssh-keygen -t rsa -b 4096 -C "yourEmailID"
+
+Copy Key from GitBash:
+cat ~/.ssh/id_rsa.pub
+
+Add Your SSH key on your GitHub Account
+Click on User icon on Right top corner > Settings 
+> Access > SSH & GPG Keys > SSH Key - New key 
+> Enter copied value > Add key name as "SSH Key" > Click on "Add SSH Key"
+
+Set your name & email address on your machine through gitbash:
+1)git config --global user.email "you@example.com" 
+2)git config --global user.name "Your Name"
+
+git init
+git status
+git add <FileName>
+git commit -m “Commit message”
+git remote add origin git@github.com:Shiv2506/XoriantGitSession.git
+git push -u origin master
+
