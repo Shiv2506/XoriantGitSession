@@ -1,0 +1,47 @@
+Scenario 1:
+1. Go to GitBash/ Terminal.
+2. Create new branch.
+3. Do changes in 1 existing files.
+4. Go to GitBash/ Terminal.
+5. git status (You can see that one file in modified state.)
+6. git stash (The work is saved with git stash command)
+7. git status (your work is just stashed in its current position. Now, the directory is cleaned. At this point, you can switch between branches and can resume work on new branch.)
+
+Scenario 2:
+1. Perform all steps of scenario 1 till step 5.
+2. git stash save "Stashing Message" (The stash will be saved with a message.)
+
+
+Scenario 3:
+What if you want to see all your stored stashes:
+ -> git stash list  
+
+Scenario 4:
+Now, you have list of your all the stashes, but you forgot that what all files were included in that stash.
+-> git stash show (It will show you latest stashed file changes.)
+-> git stash show <index> or git stash show stash@{<index>} (This command will show you index wise changes.)
+On GitBash/ Terminal if you want to see changes within files, below command will be useful:
+-> git stash show -p (It will show you latest stashed files content.)
+-> git stash show -p <index> or git stash show -p stash@{<index>} (This command will show you index wise files content.)
+
+Scenario 5:
+Now, you want to re-apply the previous stashed changes, use below command:
+-> git stash pop (It will re-apply latest stash changes.)
+-> git stash pop <index> or git stash pop stash@{<index>} (It will re-apply index wise stash changes.)
+
+Note: The popping option removes the changes from stash and applies them to your working file.
+
+Scenario 6:
+Now, you want to apply stashed changes in your IDE, use below command:
+-> git stash apply (It will apply latest stashed changes in your project.)
+-> git stash apply <index> or git stash apply stash@{<index>} (It will apply index-based changes in your project.)
+
+The git stash apply command is quite like git stash pop. The main difference between both commands is stash pop command that deletes the stash from the stack after it is applied.
+
+Scenario 7:
+Now, you have multiple stashes list and you want to remove one of them (or delete a stash from the queue), use below command:
+-> git stash drop <index> or git stash drop stash@{<index>}
+
+Scenario 8:
+To delete all the available stashes, operate below command:
+-> git stash clear
